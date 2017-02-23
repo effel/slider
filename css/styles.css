@@ -1,0 +1,339 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	text-decoration: none;  
+}
+a img {
+    border: none;
+}
+html {
+  height: 100%;
+}
+body {
+	position: relative;
+	height: 100%;
+	color: #000;
+    font-size: 0.75rem;		
+	font-family: 'Roboto', sans-serif;;
+    background: #e2e2e2;
+}
+.clear {
+  clear: both;
+}
+.all {
+  min-height: 100%;
+}
+header {
+  position: relative;
+  height: 5rem;	
+  background: #fff;
+}
+header .logo {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.75rem;
+  color: #000;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #dbdbdb;
+}
+header .logo img {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  vertical-align: middle;
+}
+
+header nav {
+  position: absolute;
+  top: 1.7rem;
+  left: 15rem;
+}
+header nav a {
+  padding: 0 0 0 1.5rem;	
+  color: #000; 
+  font-weight: 500;  
+}
+header nav a:first-child {
+  padding: 0;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+	margin: 0 0 20vh;
+}
+.slider-list-wrapper {
+    overflow: hidden;
+    width: 100%; 
+	background: #dbdbdb; /* Old browsers */
+	background: -moz-linear-gradient(top, #dbdbdb 0%, #e8e8e8 13%, #f0f0f0 24%, #f0f0f0 54%, #ebebeb 54%, #e2e2e2 54%, #e3e3e3 58%, #ededed 68%, #f0f0f0 74%, #f0f0f0 100%, #e2e2e2 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #dbdbdb 0%,#e8e8e8 13%,#f0f0f0 24%,#f0f0f0 54%,#ebebeb 54%,#e2e2e2 54%,#e3e3e3 58%,#ededed 68%,#f0f0f0 74%,#f0f0f0 100%,#e2e2e2 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #dbdbdb 0%,#e8e8e8 13%,#f0f0f0 24%,#f0f0f0 54%,#ebebeb 54%,#e2e2e2 54%,#e3e3e3 58%,#ededed 68%,#f0f0f0 74%,#f0f0f0 100%,#e2e2e2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', endColorstr='#e2e2e2',GradientType=0 ); /* IE6-9 */	
+	
+}
+.slider-container ul {
+    display: inline-block;
+    position: relative;
+    height: 34vw;
+}
+
+.slider-container ul li {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; 
+    flex-direction: row;  	
+}
+.slider-container ul li figure {
+  width: 60%;
+}
+.slider-container ul li img {
+    opacity: 0;
+	max-width: 100%;
+	max-width: 100%;
+}
+.slider-container ul li article {
+	padding: 3vw;
+	width: 40%;
+	height: 100%;
+	color: #fff;
+    background: #cb012a;
+	box-sizing: border-box;
+}
+.slider-container ul li article h2 {
+	width: 100%;
+	margin: 0 0 0.8rem;	
+    font-size: 5vw;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.slider-container ul li article h3 {
+	display: inline-block;
+	margin: 0 0 1.6rem;
+	padding: 0 0 0.4rem;
+    border-bottom: 2px solid #ef99a6;
+}
+.slider-container ul li article h4 {
+    font-size: 1rem;
+}
+.slider-container ul li article p {
+    padding: 1rem 0;  
+}
+.slider-container ul li article a {
+    color: #fff;  
+}
+.slider-tabs {
+   position: absolute;
+   bottom: -5.6rem;
+   left: 50%;
+   width: 75%;
+   margin: 0 0 0 -39%;
+   border: 0.4rem solid #cccccc;
+   box-sizing: border-box;
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex; 
+   flex-direction: row;  
+   justify-content: space-around;
+   background: #f7f7f7; /* Old browsers */
+   background: -moz-linear-gradient(top, #f7f7f7 0%, #f7f7f7 64%, #f2f2f2 65%, #e3e3e3 67%, #e2e2e2 68%, #e6e6e6 81%, #e9e9e9 84%, #f0f0f0 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, #f7f7f7 0%,#f7f7f7 64%,#f2f2f2 65%,#e3e3e3 67%,#e2e2e2 68%,#e6e6e6 81%,#e9e9e9 84%,#f0f0f0 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, #f7f7f7 0%,#f7f7f7 64%,#f2f2f2 65%,#e3e3e3 67%,#e2e2e2 68%,#e6e6e6 81%,#e9e9e9 84%,#f0f0f0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f0f0f0',GradientType=0 ); /* IE6-9 */   
+}
+.slider-tabs a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 5.0vh 0;
+  font-weight: bold;
+  color: #3d3d3d;
+  font-size: 2rem;
+  text-align: center;
+}
+.slider-tabs a i {
+  display: none;	
+  position: absolute;
+  top: -0.4rem;
+  left: -0.4rem;
+  right: -0.4rem;
+  bottom: -0.4rem;
+  border: 0.4rem solid #3d3d3d;  
+}
+.slider-tabs a i:before {
+  position: absolute;
+  display: block;
+  top: -1.5rem;
+  left: 50%;
+  margin: 0 0 0 -7px;
+  content: "";
+  font-size: 0;	
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;  
+  border-bottom: 10px solid #3d3d3d;  
+  border-top: 10px solid transparent;    
+}
+.slider-tabs a:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 1px;
+  background: #cccccc;
+}
+.slider-tabs a.current i {
+  display: block;
+}
+.item-info {
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+.item-info h2 {
+   padding-top: 0.8rem;
+   margin-bottom: 0.8rem;
+   text-transform: uppercase;
+   font-size: 1rem;
+   font-weight: 500;
+ }
+.item-info p {
+  padding: 0.3rem 0;
+}
+.item-info figure {
+  float: left;	
+  width: 22.9vw;
+  height: 14vw;
+  margin: 0 1rem 0 0;
+  background: #6a6a6a;
+  border: 0.35rem solid #fff; 
+}
+.item-info article {
+  overflow: hidden;	
+  margin-left: 25vw;  
+}
+.but-action {
+  position: relative;	
+  margin: 1rem 0 0;
+  padding: 0.6rem 1.4rem 0.6rem 0.7rem;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 1px solid #b60923;
+  cursor: pointer;
+  background: #b60923; /* Old browsers */
+  background: -moz-linear-gradient(top, #b60923 0%, #b60923 32%, #d30929 35%, #d30929 58%, #ea0f2f 61%, #ea0f2f 97%, #f35575 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #b60923 0%,#b60923 32%,#d30929 35%,#d30929 58%,#ea0f2f 61%,#ea0f2f 97%,#f35575 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #b60923 0%,#b60923 32%,#d30929 35%,#d30929 58%,#ea0f2f 61%,#ea0f2f 97%,#f35575 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b60923', endColorstr='#f35575',GradientType=0 ); /* IE6-9 */  
+}
+.arr {
+  position: absolute;
+  right: 0.3rem;
+  top: 0.9rem;
+  font-size: 0;	
+  border-right: 7px solid transparent;
+  border-left: 7px solid #fff;  
+  border-bottom: 5px solid transparent;  
+  border-top: 5px solid transparent;  
+}
+.footer-padding {
+  height: 14rem;
+}
+footer {
+  position: relative;
+  height: 6.87rem;
+  margin: -6.87rem 0 0;
+  background: #fff;
+}
+.footer-nav {
+  position: absolute;
+  top: 2rem;
+  left: 2.2rem;
+  font-weight: 500;
+}
+.footer-nav a {
+  display: block;
+  color: #000;
+  padding-bottom: 0.2rem;
+}
+footer .copy {
+  position: absolute;
+  bottom: 1rem;
+  left: 2.2rem;
+  color: #aaabac;
+}
+footer .copy a {
+  color: #aaabac;	
+  text-decoration: underline;
+}
+footer .logo {
+  position:absolute;
+  right: 2.2rem;
+  top: 50%;
+  transform: translate(0, -50%);  
+}
+footer .info {
+  position:absolute;
+  top: 1.4rem;
+  right: 10rem;	
+  width: 13rem;
+  color: #565656;
+}
+footer .info h2 {
+  margin: 0 0 0.4rem;
+  font-weight: 500;
+}
+footer .info p {
+  line-height: 1.3;
+}
