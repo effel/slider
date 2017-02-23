@@ -28,12 +28,10 @@
      function setAnimateToSlider(value, animateDirection, imgNumber) {
          sliderContainer.animate({ "margin-left": animateDirection + value }, 500);
          slidesElem.eq(imgNumber).find("img").animate({ "opacity": 1 }, 2000);
-         slidesElem.eq(imgNumber).find("img").animate({ "opacity": 0 }, 2000);
      };
 
      function startSlider(movingParam) {
          slidesElem.eq(0).find("img").animate({ "opacity": 1 }, 2000);
-         slidesElem.eq(0).find("img").animate({ "opacity": 0 }, 2000);
          interval = setInterval(function() {
              if (slidesElemSize > counter) {
 				 slideTabs.find("a").eq(counter).addClass("current");
@@ -58,7 +56,6 @@
              slideTabs.append("<a href='#' data-id=" + increased + ">" + increased + "<i></i></a>");
              slideTabs.find("a").eq(0).addClass("current");
              slidesElem.eq(0).find("img").animate({ "opacity": 1 }, 2000);
-             slidesElem.eq(0).find("img").animate({ "opacity": 0 }, 2000);
          }
      };
 
