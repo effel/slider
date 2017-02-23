@@ -172,7 +172,7 @@ header nav a:first-child {
 }
 .slider-tabs {
    position: absolute;
-   bottom: -5.6rem;
+   bottom: -6.9vw;
    left: 50%;
    width: 75%;
    margin: 0 0 0 -39%;
@@ -195,7 +195,7 @@ header nav a:first-child {
   position: relative;
   display: inline-block;
   width: 100%;
-  padding: 5.0vh 0;
+  padding: 2.3vw 0;
   font-weight: bold;
   color: #3d3d3d;
   font-size: 2rem;

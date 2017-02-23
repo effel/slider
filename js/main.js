@@ -11,7 +11,7 @@
      var defaultNum;
 	 var windowWidth = $(window).width();
 
-     function sliderDefaultPosition() {
+	 function sliderDefaultPosition() {
          slidesElem.find("img").css({ "opacity": 0 });
 		 slideTabs.find("a").eq(0).addClass("current");	
 		 slideTabs.find("a").eq(0).siblings("a").removeClass("current");		 		 
@@ -21,17 +21,19 @@
 
      function setSlidesParam(leftPosition) {
          slidesElem.each(function(index, value) {
-             return $(this).css({ "left": leftPosition * index, "width": windowWidth});
+             return $(this).css({ "left": leftPosition * index, "width": leftPosition });
          });
      };
 
      function setAnimateToSlider(value, animateDirection, imgNumber) {
          sliderContainer.animate({ "margin-left": animateDirection + value }, 500);
-         slidesElem.eq(imgNumber).find("img").animate({ "opacity": 1 }, 100);
+         slidesElem.eq(imgNumber).find("img").animate({ "opacity": 1 }, 2000);
+         slidesElem.eq(imgNumber).find("img").animate({ "opacity": 0 }, 2000);
      };
 
      function startSlider(movingParam) {
          slidesElem.eq(0).find("img").animate({ "opacity": 1 }, 2000);
+         slidesElem.eq(0).find("img").animate({ "opacity": 0 }, 2000);
          interval = setInterval(function() {
              if (slidesElemSize > counter) {
 				 slideTabs.find("a").eq(counter).addClass("current");
@@ -54,7 +56,9 @@
              var increased = i;
              ++increased;
              slideTabs.append("<a href='#' data-id=" + increased + ">" + increased + "<i></i></a>");
-		     slideTabs.find("a").eq(0).addClass("current");				 
+             slideTabs.find("a").eq(0).addClass("current");
+             slidesElem.eq(0).find("img").animate({ "opacity": 1 }, 2000);
+             slidesElem.eq(0).find("img").animate({ "opacity": 0 }, 2000);
          }
      };
 
@@ -66,7 +70,7 @@
 		  });
 		  stopSlider();
 		});
-		element.mouseout(function(){
+		element.mouseleave(function(){
 		  startSlider(windowWidth);
 		});		
      };
@@ -94,9 +98,19 @@
                  defaultNum = elemNumber;
              }
      };
-
-     startSlider(windowWidth);
+	 
      setSlidesParam(windowWidth);
      createSlidePaging();
+     startSlider(windowWidth); 
      stopOnEvent(slideTabs.find("a"));
+	 
+     $(window).resize(function() {
+         counter = 1;
+	     windowWidth = $(window).width();
+	     setSlidesParam(windowWidth);
+	     sliderDefaultPosition();
+	     stopSlider();
+		 startSlider(windowWidth);
+     });
+	 
  });
