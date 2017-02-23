@@ -16,7 +16,7 @@
 		 slideTabs.find("a").eq(0).addClass("current");	
 		 slideTabs.find("a").eq(0).siblings("a").removeClass("current");		 		 
          sliderContainer.css({ "margin-left": 0 });
-         slidesElem.eq(0).find("img").animate({ "opacity": 1 }, 1000);
+         slidesElem.eq(0).find("img").animate({ "opacity": 1 }, 2000);
      };
 
      function setSlidesParam(leftPosition) {
@@ -73,27 +73,30 @@
      };
 
      function addActionOnPagingClick(event) {
-			 event.preventDefault();		 
-             defaultNum = counter;
-             var target = $(event.target);
-			 target.addClass("current");
-			 target.siblings("a").removeClass("current");
-             var elemNumber = +(target.attr('data-id'));
-             var currentPosition;
-             var param;
-             if (elemNumber) {
-                 if (elemNumber > defaultNum) {
-                     currentPosition = elemNumber - defaultNum;
-                     param = '-=';
-                 } else {
-                     currentPosition = defaultNum - elemNumber;
-                     param = '+=';
-                 }
-                 var currentStep = windowWidth * currentPosition;
-                 counter = elemNumber;	
-                 setAnimateToSlider(currentStep, param, elemNumber - 1);
-                 defaultNum = elemNumber;
-             }
+		event.preventDefault();		 
+        defaultNum = counter;
+        var target = $(event.target);
+		target.addClass("current");
+		target.siblings("a").removeClass("current");
+        var elemNumber = +(target.attr('data-id'));
+        var currentPosition;
+        var param;
+		 slidesElem.each(function(index, value){
+           $(this).find("img").css({ "opacity": 0 });				 
+		 })			
+        if (elemNumber) {
+            if (elemNumber > defaultNum) {
+                currentPosition = elemNumber - defaultNum;
+                param = '-=';
+            } else {
+                currentPosition = defaultNum - elemNumber;
+                param = '+=';
+            }
+            var currentStep = windowWidth * currentPosition;
+            counter = elemNumber;	
+            setAnimateToSlider(currentStep, param, elemNumber - 1);
+            defaultNum = elemNumber;
+        }
      };
 	 
      setSlidesParam(windowWidth);
